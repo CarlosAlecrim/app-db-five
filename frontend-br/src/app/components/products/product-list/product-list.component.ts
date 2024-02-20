@@ -1,6 +1,5 @@
+import { Produit } from './../Product';
 import { Component } from '@angular/core';
-
-import { Product } from '../Product';
 
 @Component({
   selector: 'app-product-list',
@@ -9,22 +8,25 @@ import { Product } from '../Product';
 })
 export class ProductListComponent {
   details! :string;
-  products: Product[] = [
+  products: Produit[] = [
     {
-
-      nome:'feijao',
-      preco: 12.5
+      nom:'feijao',
+      prix: 12.5,
+      description: '' ,
+      quantite_en_stock:100
     },
     {
-      nome:'arroz',
-      preco: 5.5
+      nom:'arroz',
+      prix: 5.5,
+      description: '' ,
+      quantite_en_stock:100
 
     }
 
   ]
 
-  showDetails(product : Product):void{
-    this.details = `Details: ${product.nome} sell for ${product.preco} R$`
+  showDetails(product : Produit):void{
+    this.details = `Details: ${product.nom} sell for ${product.prix} R$`
   }
 
 }
